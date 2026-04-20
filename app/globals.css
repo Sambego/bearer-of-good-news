@@ -5,3 +5,98 @@ body, html {
   margin: 0;
   padding: 0;
 }
+
+@keyframes explode {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(4);
+  }
+}
+
+@keyframes crack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(var(--crack));
+  }
+}
+
+@keyframes leak {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: var(--leakOp);
+    transform: translate3d(0, var(--leakX), 0);
+  }
+}
+
+@keyframes bearer {
+  0% {
+    opacity: 0;
+    transform: translate3d(-76%, 91%, 0px);
+  }
+  60% {
+    opacity: 1; 
+    transform: translate3d(20%, -100%, 0px);
+  }
+  100% {
+    z-index: -1;
+    transform: translate3d(0, 0, 0px);
+  }
+}
+
+@keyframes click {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes copy {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(var(--copyX), var(--copyY), 0);
+  }
+}
+
+@keyframes silo {
+  0% {
+    border: 0px solid #000;
+  }
+
+  100% {
+    border: 8px solid #000;
+  }
+}
+
+@keyframes shiftup {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes strike {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}

@@ -73,13 +73,13 @@ export default function Home() {
         </Subtitle>
       </Slide>
       <Slide>
-        <Subtitle>Summary</Subtitle>
         <List>
           <li>OAuth 2.0</li>
           <li>OAuth 2.1</li>
           <li>DPoP</li>
           <li>CIBA</li>
           <li>Token Exchange</li>
+          <li>XAA</li>
         </List>
       </Slide>
       <Slide style={{ background: primary }}>

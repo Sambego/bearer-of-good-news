@@ -468,62 +468,70 @@ export default function Home() {
           <Highlight style={{ position: "relative" }}>
             copying
             <Highlight
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                zIndex: 1,
-                opacity: 0,
-                transformOrigin: "0px 0px",
-                boxShadow: "0px 0px 5px rgba(0, 0, 0, .2)",
-                "--copyX": "10%",
-                "--copyY": "-40%",
-                animation: ".3s ease-in copy 0s forwards",
-              }}
+              style={
+                {
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  zIndex: 1,
+                  opacity: 0,
+                  transformOrigin: "0px 0px",
+                  boxShadow: "0px 0px 5px rgba(0, 0, 0, .2)",
+                  "--copyX": "10%",
+                  "--copyY": "-40%",
+                  animation: ".3s ease-in copy 0s forwards",
+                } as React.CSSProperties
+              }
             >
               copying
             </Highlight>
             <Highlight
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                zIndex: 2,
-                opacity: 0,
-                transformOrigin: "0px 0px",
-                boxShadow: "0px 0px 5px rgba(0, 0, 0, .2)",
-                "--copyX": "20%",
-                "--copyY": "-70%",
-                animation: ".3s ease-in copy .3s forwards",
-              }}
+              style={
+                {
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  zIndex: 2,
+                  opacity: 0,
+                  transformOrigin: "0px 0px",
+                  boxShadow: "0px 0px 5px rgba(0, 0, 0, .2)",
+                  "--copyX": "20%",
+                  "--copyY": "-70%",
+                  animation: ".3s ease-in copy .3s forwards",
+                } as React.CSSProperties
+              }
             >
               copying
             </Highlight>
             <Highlight
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                zIndex: 3,
-                opacity: 0,
-                transformOrigin: "0px 0px",
-                boxShadow: "0px 0px 5px rgba(0, 0, 0, .2)",
-                "--copyX": "30%",
-                "--copyY": "-100%",
-                animation: ".3s ease-in copy .6s forwards",
-              }}
+              style={
+                {
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  zIndex: 3,
+                  opacity: 0,
+                  transformOrigin: "0px 0px",
+                  boxShadow: "0px 0px 5px rgba(0, 0, 0, .2)",
+                  "--copyX": "30%",
+                  "--copyY": "-100%",
+                  animation: ".3s ease-in copy .6s forwards",
+                } as React.CSSProperties
+              }
             >
               copying
             </Highlight>
           </Highlight>
           <Text
-            style={{
-              position: "absolute",
-              top: "-30%",
-              left: "0",
-              fontSize: "1.5vw",
-              fontWeight: "bold",
-            }}
+            style={
+              {
+                position: "absolute",
+                top: "-30%",
+                left: "0",
+                fontSize: "1.5vw",
+                fontWeight: "bold",
+              } as React.CSSProperties
+            }
           >
             <Highlight>Problem</Highlight>
           </Text>
@@ -1433,62 +1441,70 @@ curl https://x.auth0.com/.well-known/openid-configuration
           <Highlight style={{ position: "relative" }}>
             copying
             <Highlight
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                zIndex: 1,
-                opacity: 0,
-                transformOrigin: "0px 0px",
-                boxShadow: "0px 0px 5px rgba(0, 0, 0, .2)",
-                "--copyX": "10%",
-                "--copyY": "-40%",
-                animation: ".3s ease-in copy 0s forwards",
-              }}
+              style={
+                {
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  zIndex: 1,
+                  opacity: 0,
+                  transformOrigin: "0px 0px",
+                  boxShadow: "0px 0px 5px rgba(0, 0, 0, .2)",
+                  "--copyX": "10%",
+                  "--copyY": "-40%",
+                  animation: ".3s ease-in copy 0s forwards",
+                } as React.CSSProperties
+              }
             >
               copying
             </Highlight>
             <Highlight
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                zIndex: 2,
-                opacity: 0,
-                transformOrigin: "0px 0px",
-                boxShadow: "0px 0px 5px rgba(0, 0, 0, .2)",
-                "--copyX": "20%",
-                "--copyY": "-70%",
-                animation: ".3s ease-in copy .3s forwards",
-              }}
+              style={
+                {
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  zIndex: 2,
+                  opacity: 0,
+                  transformOrigin: "0px 0px",
+                  boxShadow: "0px 0px 5px rgba(0, 0, 0, .2)",
+                  "--copyX": "20%",
+                  "--copyY": "-70%",
+                  animation: ".3s ease-in copy .3s forwards",
+                } as React.CSSProperties
+              }
             >
               copying
             </Highlight>
             <Highlight
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                zIndex: 3,
-                opacity: 0,
-                transformOrigin: "0px 0px",
-                boxShadow: "0px 0px 5px rgba(0, 0, 0, .2)",
-                "--copyX": "30%",
-                "--copyY": "-100%",
-                animation: ".3s ease-in copy .6s forwards",
-              }}
+              style={
+                {
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  zIndex: 3,
+                  opacity: 0,
+                  transformOrigin: "0px 0px",
+                  boxShadow: "0px 0px 5px rgba(0, 0, 0, .2)",
+                  "--copyX": "30%",
+                  "--copyY": "-100%",
+                  animation: ".3s ease-in copy .6s forwards",
+                } as React.CSSProperties
+              }
             >
               copying
             </Highlight>
           </Highlight>
           <Text
-            style={{
-              position: "absolute",
-              top: "-30%",
-              left: "0",
-              fontSize: "1.5vw",
-              fontWeight: "bold",
-            }}
+            style={
+              {
+                position: "absolute",
+                top: "-30%",
+                left: "0",
+                fontSize: "1.5vw",
+                fontWeight: "bold",
+              } as React.CSSProperties
+            }
           >
             <Highlight>Problem</Highlight>
           </Text>

@@ -1526,6 +1526,66 @@ curl https://x.auth0.com/.well-known/openid-configuration
           reduces errors.
         </Text>
       </Slide>
+      <Slide notes="Metadata enables dynamic configuration and reduces errors.">
+        <Text>
+          What if clients could{" "}
+          <Highlight>register themselves on your identity provider</Highlight>,
+          eliminating manual work?
+        </Text>
+      </Slide>
+
+      <Slide>
+        <Title>Dynamic Client Registration</Title>
+        <Text>
+          <a
+            href="https://datatracker.ietf.org/doc/html/rfc7591"
+            title="rfc 8414"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: foreground, fontSize: "3rem", display: "inline" }}
+          >
+            rfc 7591
+          </a>
+        </Text>
+      </Slide>
+      <Slide>
+        <Text>
+          A client can <Highlight>register themselves</Highlight> on an identity
+          provide.
+        </Text>
+      </Slide>
+
+      <Slide notes="Register a client dynamically via a POST to the registration endpoint.">
+        <Code
+          lang="bash"
+          code={`curl -X POST https://a.auth0.com/oidc/register \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "client_name": "My App",
+    "redirect_uris": ["https://app.example.com/callback"],
+    "grant_types": ["authorization_code"],
+    "token_endpoint_auth_method": "client_secret_basic"
+  }'`}
+        />
+      </Slide>
+
+      <Slide notes="The auth server responds with a client_id and client_secret.">
+        <Code
+          lang="json"
+          code={`{
+  "client_id": "s6BhdRkqt3",
+  "client_secret": "cf136dc3c1fc93f31185e5885805d",
+  "redirect_uris": ["https://app.example.com/callback"],
+  "grant_types": ["authorization_code"]
+}`}
+        />
+      </Slide>
+      <Slide>
+        <Text>
+          DCR means <Highlight>anybody can register clients</Highlight> on your
+          identity provider!
+        </Text>
+      </Slide>
 
       <Slide notes="If servers can publish metadata, why not clients too?">
         <Text>
@@ -1568,7 +1628,6 @@ curl https://x.auth0.com/.well-known/openid-configuration
           .
         </Text>
       </Slide>
-
       <Slide>
         <Text>
           For example:{" "}
@@ -1601,11 +1660,10 @@ curl https://x.auth0.com/.well-known/openid-configuration
           No <Highlight>pre-registration</Highlight> of clients required!
         </Text>
       </Slide>
-
       <Slide>
         <Text>
           This is especially usefull in an agentic context, eg.{" "}
-          <Highlight>mcp clients</Highlight>
+          <Highlight>mcp clients</Highlight>.
         </Text>
       </Slide>
 

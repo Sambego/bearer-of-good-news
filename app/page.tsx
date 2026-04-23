@@ -1178,7 +1178,7 @@ curl https://b.service.example.com \\
   payload: {
     htm: 'POST',
     // This proof is only valid for this url
-    htu: 'https://api.example.com/profile'
+    htu: 'https://a.auth0.com/oauth/token'
   }
 }, privateKey); // Sign with your private key`}
         />
@@ -1191,8 +1191,10 @@ curl https://b.service.example.com \\
       <Slide>
         <Code
           lang="bash"
-          code={`curl https://api.example.com/profile \\
-  -H "Authorization: ..." \\
+          code={`curl -X POST https://a.auth0.com/oauth/token \\
+  -d "grant_type=authorization_code" \\
+  -d "code=$AUTH_CODE" \\
+  ...
   -H "DPoP: $DPOP_PROOF"`}
         />
       </Slide>
@@ -1423,12 +1425,7 @@ curl https://b.service.example.com \\
       </Slide>
       <Slide notes="Also great for async approvals and high-value transactions.">
         <Text>
-          CIBA can request <Highlight>async approvals</Highlight>.
-        </Text>
-      </Slide>
-      <Slide notes="Also great for async approvals and high-value transactions.">
-        <Text>
-          CIBA can request extra approval for{" "}
+          CIBA can request async approval for{" "}
           <Highlight>high-value transactions</Highlight>.
         </Text>
       </Slide>
@@ -1522,8 +1519,8 @@ curl https://x.auth0.com/.well-known/openid-configuration
       </Slide>
       <Slide notes="Metadata enables dynamic configuration and reduces errors.">
         <Text>
-          Metadata enables <Highlight>dynamic configuration</Highlight> and
-          reduces errors.
+          Authorization server metadata enables{" "}
+          <Highlight>dynamic configuration</Highlight> and reduces errors.
         </Text>
       </Slide>
       <Slide notes="Metadata enables dynamic configuration and reduces errors.">
@@ -1551,7 +1548,7 @@ curl https://x.auth0.com/.well-known/openid-configuration
       <Slide>
         <Text>
           A client can <Highlight>register themselves</Highlight> on an identity
-          provide.
+          provider.
         </Text>
       </Slide>
 
@@ -1792,7 +1789,7 @@ curl https://x.auth0.com/.well-known/openid-configuration
       <Slide notes="Tokens only work for intended service - audience restriction.">
         <Text>
           Tokens only work for <Highlight>intended service</Highlight>, their
-          Audience.
+          audience.
         </Text>
       </Slide>
       <Slide notes="Compromised service has limited blast radius.">

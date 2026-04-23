@@ -39,15 +39,29 @@ export default function Home() {
       }
     >
       <Slide style={{ background: primary, color: foreground }}>
-        <Image
-          src="bear.jpg"
-          full
-          fullBg
-          color={primary}
-          alt="A bear in the woods"
-        />
-        <Title style={{ position: "relative", zIndex: 1 }}>
-          <Highlight>Bearer of Good News!</Highlight>
+        <Title
+          style={{
+            position: "relative",
+            zIndex: 1,
+            letterSpacing: "5px",
+          }}
+        >
+          Bearer of
+          <br />
+          <span style={{ position: "relative" }}>
+            Bad
+            <span
+              style={{
+                height: "1.4rem",
+                position: "absolute",
+                top: "50%",
+                left: "-1rem",
+                right: "-1rem",
+                background: "#000",
+              }}
+            ></span>
+          </span>{" "}
+          Good News!
         </Title>
         <Image
           src="cc.svg"
@@ -91,6 +105,7 @@ export default function Home() {
           OAuth 2.0
         </Title>
       </Slide>
+
       <Slide>
         <Text>
           <Highlight>OAuth 2.0</Highlight> is a protocol that allows a user to{" "}
@@ -433,7 +448,8 @@ export default function Home() {
       </Slide>
       <Slide>
         <Text>
-          Every endpoint needs to be <Highlight>manually configured</Highlight>.
+          <Highlight>Every endpoint needs to be manually configured</Highlight>{" "}
+          in your application.
         </Text>
       </Slide>
       <Slide notes="Every endpoint URL had to be read from docs and hardcoded.">
@@ -451,6 +467,30 @@ export default function Home() {
       </Slide>
       <Slide notes="Hardcoded endpoints are fragile — any server-side change breaks every client.">
         <Text>
+          <Highlight>
+            The{" "}
+            <span style={{ fontFamily: "var(--font-geist-mono)" }}>
+              /authorize
+            </span>{" "}
+            and{" "}
+            <span style={{ fontFamily: "var(--font-geist-mono)" }}>/token</span>
+          </Highlight>{" "}
+          endpoints are not standardized by OAuth.
+        </Text>
+      </Slide>
+      <Slide notes="Hardcoded endpoints are fragile — any server-side change breaks every client.">
+        <Text>
+          <Highlight>
+            The{" "}
+            <span style={{ fontFamily: "var(--font-geist-mono)" }}>
+              .well_known
+            </span>
+          </Highlight>{" "}
+          endpoints are standardized.
+        </Text>
+      </Slide>
+      <Slide notes="Hardcoded endpoints are fragile — any server-side change breaks every client.">
+        <Text>
           If the server <Highlight>moves an endpoint</Highlight>, every client{" "}
           <Highlight>breaks</Highlight>.
         </Text>
@@ -462,6 +502,32 @@ export default function Home() {
         </Text>
         <Text>Eg. grant-types, scopes, signing algorithms, PKCE, ...</Text>
       </Slide>
+      <Slide>
+        <Text>
+          Every application needs to be{" "}
+          <Highlight>manually configured</Highlight> in your identity provider.
+        </Text>
+      </Slide>
+      <Slide>
+        <Text>
+          <Highlight>A callback url, origin, logout url</Highlight>, ... needs
+          to be <Highlight>manually configured</Highlight>.
+        </Text>
+      </Slide>
+      <Slide>
+        <Text>
+          Your identity provider needs to create a{" "}
+          <Highlight>client ID & secret</Highlight> for your appliation, which
+          you have to <Highlight>manually configure</Highlight> in your
+          application.
+        </Text>
+      </Slide>
+      <Slide>
+        <Text>
+          Manual work is <Highlight>prone to mistakes</Highlight>!
+        </Text>
+      </Slide>
+
       <Slide notes="Fourth problem: services passed credentials around unsafely.">
         <Title>
           Credential{" "}
@@ -1052,7 +1118,7 @@ curl https://b.service.example.com \\
           Access tokens are <Highlight>presented as Bearer Tokens</Highlight>.
         </Text>
       </Slide>
-      {/* ===== DPoP SUBSECTION ===== */}
+
       <Slide notes="DPoP binds tokens to cryptographic keys.">
         <Title>Demonstrating Proof-of-Possession</Title>
         <a
@@ -1126,14 +1192,122 @@ curl https://b.service.example.com \\
         <Code
           lang="bash"
           code={`curl https://api.example.com/profile \\
-  -H "Authorization: DPoP $TOKEN" \\
+  -H "Authorization: ..." \\
   -H "DPoP: $DPOP_PROOF"`}
         />
+      </Slide>
+      <Slide>
+        <Text>
+          <Highlight>The DPoP proof&apos;s public key</Highlight> is represented
+          using the <Highlight>confirmation method (cnf)</Highlight> in the
+          Access Token&apos;s header.
+        </Text>
+      </Slide>
+      <Slide>
+        <Text>
+          A JSON Web Key Thumbprint (jkt) holds{" "}
+          <Highlight>a hash of the proof&apos;s public key</Highlight>.
+        </Text>
+      </Slide>
+      <Slide>
+        <Text>
+          With the{" "}
+          <Highlight>DPoP proof&apos;s public key thumbprint</Highlight> in the
+          Access Token, we can validate{" "}
+          <Highlight>
+            subsequent DPoP proofs are issued by the same application that
+            requested the Access Token
+          </Highlight>
+          .
+        </Text>
+      </Slide>
+      <Slide notes="Step 2: Create a proof JWT for each request.">
+        <Code
+          lang="json"
+          code={`{
+  "iss": "https://a.auth0.com",
+  "sub": "1234",
+  "aud": "https://api.example.com",
+  "exp": 1776883637,
+  "iat": 1776880037,
+  "cnf": {
+    "jkt": "YTpgaRpPiUmjWDVjgRRrGshj6ZfAawP6FvHgbsPIRLU"
+  }
+}`}
+        />
+      </Slide>
+      <Slide notes="Step 3: Send token with proof in every request.">
+        <Text
+          style={{
+            fontFamily: "var(--font-geist-mono)",
+          }}
+        >
+          Authorization:{" "}
+          <span
+            style={{
+              display: "inline-flex",
+              flexDirection: "column",
+              overflow: "hidden",
+              height: "50%",
+              fontFamily: "var(--font-geist-mono)",
+              margin: 0,
+              gap: 0,
+              textAlign: "left",
+            }}
+          >
+            <span
+              style={
+                {
+                  letterSpacing: ".3rem",
+                  animation: "1s ease-in shiftup 1s forwards ",
+                } as React.CSSProperties
+              }
+            >
+              Bearer eyJhbGca...
+            </span>
+            <span
+              style={
+                {
+                  letterSpacing: ".3rem",
+                  animation: "1s ease-in shiftup 1s forwards ",
+                } as React.CSSProperties
+              }
+            >
+              DPoP eyJhbGca...
+            </span>
+          </span>
+        </Text>
       </Slide>
       <Slide notes="Step 3: Send token with proof in every request.">
         <Text>
           Instead of the Bearer scheme <Highlight>we use DPoP</Highlight>.
         </Text>
+      </Slide>
+      <Slide>
+        <Code
+          lang="bash"
+          code={`curl https://api.example.com/profile \\
+  -H "Authorization: DPoP $ACCES_TOKEN" \\
+  -H "DPoP: $DPOP_PROOF"`}
+        />
+      </Slide>
+      <Slide>
+        <Text>
+          <Highlight>
+            Subsequent DPoP proof&apos; must include an Access Token Hash (ath)
+          </Highlight>{" "}
+          claim with a valid hash of the associated Access Token.
+        </Text>
+      </Slide>
+      <Slide notes="Step 2: Create a proof JWT for each request.">
+        <Code
+          lang="json"
+          code={`{
+  "htm": "GET",
+  "htu": "https://api.example.com/profile"
+  "ath": "dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk"
+}`}
+        />
       </Slide>
       <Slide notes="DPoP is optional - use for high-security APIs.">
         <Text>

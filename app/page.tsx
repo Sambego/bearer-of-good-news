@@ -114,7 +114,7 @@ export default function Home() {
               padding: "1rem 2rem",
             }}
           >
-            OIDC
+            CIMD
           </div>
         </List>
       </Slide>
@@ -137,7 +137,7 @@ export default function Home() {
               padding: "1rem 2rem",
             }}
           >
-            OIDC
+            CIMD
           </div>
           <div
             style={{
@@ -174,7 +174,7 @@ export default function Home() {
               padding: "1rem 2rem",
             }}
           >
-            OIDC
+            CIMD
           </div>
           <div
             style={{

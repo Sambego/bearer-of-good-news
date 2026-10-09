@@ -87,7 +87,7 @@ export default function Home() {
         </Subtitle>
       </Slide>
       <Slide>
-        <List style={{ lineHeight: 0.8 }}>
+        <List style={{ lineHeight: 1 }}>
           <li>OAuth 2.0</li>
           <li>OAuth 2.1</li>
           <li>DPoP</li>
@@ -97,7 +97,7 @@ export default function Home() {
         </List>
       </Slide>
       <Slide>
-        <List style={{ lineHeight: 0.8 }}>
+        <List style={{ lineHeight: 1 }}>
           <li>OAuth 2.0</li>
           <li>OAuth 2.1</li>
           <li>DPoP</li>
@@ -111,7 +111,7 @@ export default function Home() {
             top: "50%",
             left: "50%",
             background: primary,
-            fontSize: "6rem",
+            fontSize: "10rem",
             fontWeight: "bold",
             transform: "rotate(-45deg) translate(-20%, -200%)",
             padding: "1rem 2rem",

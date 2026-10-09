@@ -68,7 +68,7 @@ export default function Home() {
           style={{
             position: "fixed",
             bottom: "2rem",
-            left: "2rem",
+            left: "3rem",
             width: "10%",
             zIndex: 2,
             background: primary,
@@ -87,7 +87,7 @@ export default function Home() {
         </Subtitle>
       </Slide>
       <Slide>
-        <List>
+        <List style={{ lineHeight: 0.8 }}>
           <li>OAuth 2.0</li>
           <li>OAuth 2.1</li>
           <li>DPoP</li>
@@ -95,6 +95,30 @@ export default function Home() {
           <li>Token Exchange</li>
           <li>XAA</li>
         </List>
+      </Slide>
+      <Slide>
+        <List style={{ lineHeight: 0.8 }}>
+          <li>OAuth 2.0</li>
+          <li>OAuth 2.1</li>
+          <li>DPoP</li>
+          <li>CIBA</li>
+          <li>Token Exchange</li>
+          <li>XAA</li>
+        </List>
+        <div
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            background: primary,
+            fontSize: "6rem",
+            fontWeight: "bold",
+            transform: "rotate(-45deg) translate(-20%, -200%)",
+            padding: "1rem 2rem",
+          }}
+        >
+          Acronym bingo
+        </div>
       </Slide>
       <Slide style={{ background: primary }}>
         <Title
@@ -778,7 +802,7 @@ curl https://b.service.example.com \\
           It aims at being <Highlight>secure by default</Highlight>.
         </Text>
       </Slide>
-      <Slide>
+      {/* <Slide>
         <Columns>
           <div style={{ backgroundColor: primary }}>
             <Text>Core</Text>
@@ -862,8 +886,8 @@ curl https://b.service.example.com \\
             <Text style={{ fontWeight: "bold" }}>Extensions</Text>
           </div>
         </Columns>
-      </Slide>
-      <Slide style={{ background: primary }}>
+      </Slide> */}
+      {/* <Slide style={{ background: primary }}>
         <Title
           style={{
             letterSpacing: "4rem",
@@ -872,7 +896,7 @@ curl https://b.service.example.com \\
           OAuth 2.1 Core
         </Title>
         <Text style={{ fontStyle: "italic" }}>(Mandatory Changes)</Text>
-      </Slide>
+      </Slide> */}
       <Slide notes="Entering the core OAuth 2.1 spec changes - everything here is mandatory.">
         <Subtitle>
           OAuth 2.1
@@ -1073,7 +1097,7 @@ curl https://b.service.example.com \\
         </Text>
       </Slide>
       <Slide notes="Every refresh token use issues a new one and invalidates the old.">
-        <Title>Refresh Token Rotation</Title>
+        <Title>Token Binding or Refresh Token Rotation</Title>
       </Slide>
       <Slide>
         <Text>
@@ -1091,6 +1115,15 @@ curl https://b.service.example.com \\
           including <Highlight>redirection URIs and token transport</Highlight>,
           to enhance security by preventing credential leakage.
         </Text>
+      </Slide>
+      <Slide style={{ background: primary }}>
+        <Title
+          style={{
+            letterSpacing: "4rem",
+          }}
+        >
+          OAuth Extensions
+        </Title>
       </Slide>
       <Slide notes="Now we shift to optional extensions that enhance OAuth.">
         <Title style={{ position: "relative" }}>

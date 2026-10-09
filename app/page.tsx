@@ -88,7 +88,6 @@ export default function Home() {
       </Slide>
       <Slide>
         <List style={{ lineHeight: 1 }}>
-          <li>OAuth 2.0</li>
           <li>OAuth 2.1</li>
           <li>DPoP</li>
           <li>CIBA</li>
@@ -98,13 +97,167 @@ export default function Home() {
       </Slide>
       <Slide>
         <List style={{ lineHeight: 1 }}>
-          <li>OAuth 2.0</li>
+          <li>OAuth 2.1</li>
+          <li>DPoP</li>
+          <li>CIBA</li>
+          <li>Token Exchange</li>
+          <li>XAA</li>
+          <div
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              background: primary,
+              fontSize: "6rem",
+              fontWeight: "bold",
+              transform: "rotate(-30deg) translate(-40%, -200%)",
+              padding: "1rem 2rem",
+            }}
+          >
+            OIDC
+          </div>
+        </List>
+      </Slide>
+      <Slide>
+        <List style={{ lineHeight: 1 }}>
+          <li>OAuth 2.1</li>
+          <li>DPoP</li>
+          <li>CIBA</li>
+          <li>Token Exchange</li>
+          <li>XAA</li>
+          <div
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              background: primary,
+              fontSize: "6rem",
+              fontWeight: "bold",
+              transform: "rotate(-30deg) translate(-40%, -200%)",
+              padding: "1rem 2rem",
+            }}
+          >
+            OIDC
+          </div>
+          <div
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              background: primary,
+              fontSize: "6rem",
+              fontWeight: "bold",
+              transform: "rotate(45deg) translate(-20%, -200%)",
+              padding: "1rem 2rem",
+            }}
+          >
+            PKCE
+          </div>
+        </List>
+      </Slide>
+      <Slide>
+        <List style={{ lineHeight: 1 }}>
+          <li>OAuth 2.1</li>
+          <li>DPoP</li>
+          <li>CIBA</li>
+          <li>Token Exchange</li>
+          <li>XAA</li>
+          <div
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              background: primary,
+              fontSize: "6rem",
+              fontWeight: "bold",
+              transform: "rotate(-30deg) translate(-40%, -200%)",
+              padding: "1rem 2rem",
+            }}
+          >
+            OIDC
+          </div>
+          <div
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              background: primary,
+              fontSize: "6rem",
+              fontWeight: "bold",
+              transform: "rotate(45deg) translate(-20%, -200%)",
+              padding: "1rem 2rem",
+            }}
+          >
+            PKCE
+          </div>
+          <div
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              background: primary,
+              fontSize: "6rem",
+              fontWeight: "bold",
+              transform: "rotate(15deg) translate(-20%, 130%)",
+
+              padding: "1rem 2rem",
+            }}
+          >
+            OBO
+          </div>
+        </List>
+      </Slide>
+      <Slide>
+        <List style={{ lineHeight: 1 }}>
           <li>OAuth 2.1</li>
           <li>DPoP</li>
           <li>CIBA</li>
           <li>Token Exchange</li>
           <li>XAA</li>
         </List>
+        <div
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            background: primary,
+            fontSize: "6rem",
+            fontWeight: "bold",
+            transform: "rotate(-30deg) translate(-40%, -200%)",
+            padding: "1rem 2rem",
+          }}
+        >
+          OIDC
+        </div>
+        <div
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            background: primary,
+            fontSize: "6rem",
+            fontWeight: "bold",
+            transform: "rotate(45deg) translate(-20%, -200%)",
+            padding: "1rem 2rem",
+          }}
+        >
+          PKCE
+        </div>
+        <div
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            background: primary,
+            fontSize: "6rem",
+            fontWeight: "bold",
+            transform: "rotate(15deg) translate(-20%, 130%)",
+
+            padding: "1rem 2rem",
+          }}
+        >
+          OBO
+        </div>
         <div
           style={{
             position: "absolute",
